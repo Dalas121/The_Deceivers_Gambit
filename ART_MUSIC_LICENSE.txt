@@ -180,6 +180,9 @@ PORTRAITS
 mostly pre-existing wesnoth images from the Delfador's Memoirs campaign (GPL v2.0 or later)
 some made by dalas by modifying pre-existing wesnoth images (GPL v2.0 or later)
 
+crab.webp
+	made by Dalas (CC0) by modifying a CC0 image: https://www.pexels.com/photo/yellow-crab-on-gray-sand-during-daytime-73769/
+
 shaman.webp
 	by Kordov, made for Wesnoth use and used with permission (GPL v2.0 or later)
 
