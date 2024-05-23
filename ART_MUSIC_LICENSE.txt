@@ -303,4 +303,4 @@ silverback
 	made by dalas by modifying pre-existing wesnoth images (GPL v2.0 or later)
 
 delfador l3/l4
-	from Maksiu, with modifications by dalas (CC BY-SA 4.0)
+	base images by Maksiu, with modifications by dalas (CC BY-SA 4.0)
