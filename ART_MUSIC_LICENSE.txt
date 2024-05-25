@@ -294,7 +294,6 @@ arcane enforcer female
 	made by dalas by with components from bart https://opengameart.org/content/wesnoth-frankenpack (GPL v2.0 or later)
 
 beacon
-delfador l1/l2
 deoran
 garard
 kraken
@@ -302,5 +301,5 @@ maddock
 silverback
 	made by dalas by modifying pre-existing wesnoth images (GPL v2.0 or later)
 
-delfador l3/l4
+delfador
 	base images by Maksiu, with modifications by dalas (CC BY-SA 4.0)
