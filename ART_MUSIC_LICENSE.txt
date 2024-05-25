@@ -254,11 +254,7 @@ eldred
 	base images from the Reign of Lords add-on, with modifications by dalas (GPL v2.0 or later)
 
 asheviere
-asheviere-disguise
-	frankenstein by dalas (GPL v2.0 or later)
-	partially from Shield/Tzalmavet, with modifications by dalas (GPL v2.0 or later)
-	partially from the War of Legends add-on, with modifications by dalas (GPL v2.0 or later)
-	partially from pre-existing wesnoth images
+	nemaara (CC BY-SA 4.0)
 
 civilian elves
 	base images from Shield/Tzalmavet, with modifications by dalas (GPL v2.0 or later)
@@ -302,4 +298,4 @@ silverback
 	made by dalas by modifying pre-existing wesnoth images (GPL v2.0 or later)
 
 delfador
-	base images by Maksiu, with modifications by dalas (CC BY-SA 4.0)
+	base images by Maksiu, with modifications and animations by dalas (CC BY-SA 4.0)
