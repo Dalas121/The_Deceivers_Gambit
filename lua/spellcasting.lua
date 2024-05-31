@@ -578,7 +578,7 @@ function display_skills_dialog(selecting)
 	-- SHOW DIALOG
 	-------------------------
 	wml.variables['skill_id'] = nil
-	wesnoth.interface.select_unit() -- deselect delfador
+	wesnoth.interface.select_unit(1,5) -- deselect delfador (hopefully there's no unit here)
 	
 	-- select spell, synced
 	if (selecting) then
