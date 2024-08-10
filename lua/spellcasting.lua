@@ -104,7 +104,7 @@ local skills = {
 			id          = "skill_panacea",
 			label       = label(_"Panacea"),
 			image       = "icons/potion_green_small.png",
-			description = _"<span color='#6ca364'><i><b>Spell:</b></i></span> Spend <span color='#00bbe6'><i>8xp</i></span> to fully heal the lowest-health adjacent ally, and increase\n           its attacks, strikes, and damage by its level. <span color='#bb0000'><b>Next turn, it dies.</b></span>",
+			description = _"<span color='#6ca364'><i><b>Spell:</b></i></span> Spend <span color='#00bbe6'><i>8xp</i></span> to fully heal the lowest-health adjacent ally, and increase its attacks,\n           strikes, and damage by its level. <span color='#bb0000'><b>Next turn, it dies.</b></span>",
 			xp_cost=8, --XP is also used in spellcasting.cfg
 		},
 		-------------------------
@@ -254,7 +254,7 @@ local skills = {
 			id          = "skill_illusion",
 			label       = label(_"Enthrall"),
 			image       = "icons/illusion.png",
-			description = _"<span color='#6ca364'><i><b>Spell:</b></i></span> Spend <span color='#00bbe6'><i>48xp</i></span> and <span color='#c06a61'><i>your attack</i></span> to magically disguise yourself as an awe-inspiring drake,\n           reducing accuracy and dodge by 10% for enemies in a 2 hex radius.", --Ends if you take damage.
+			description = _"<span color='#6ca364'><i><b>Spell:</b></i></span> Spend <span color='#00bbe6'><i>48xp</i></span> and <span color='#c06a61'><i>your attack</i></span> to magically disguise yourself as an awe-inspiring drake,\n           reducing accuracy and dodge by 10% for enemies in a 2 hex radius. Lasts until cancelled.",
 			xp_cost=48, atk_cost=1, 
 		},
 		-------------------------
@@ -273,7 +273,7 @@ local skills = {
 			id          = "skill_contingency",
 			label       = label(_"Contingency"),
 			image       = "icons/contingency.png",
-			description = _"<span color='#a9a150'><i><b>Passive:</b></i></span> Whenever one of your soldiers dies, they are instead safely returned to your recall list.",
+			description = _"<span color='#a9a150'><i><b>Passive:</b></i></span> Whenever one of your soldiers dies, they are instead safely returned to your recall list\n               with 1 hitpoint.",
 		},
 	},
 	--###############################
@@ -315,7 +315,7 @@ local skills = {
 			id          = "skill_cataclysm",
 			label       = label(_"Cataclysm"),
 			image       = "icons/cataclysm.png",
-			description = _"<span color='#6ca364'><i><b>Spell:</b></i></span> Spend <span color='#00bbe6'><i>99xp</i></span> and <span color='#c06a61'><i>your attack</i></span> to injure everyone in a 4-hex radius for 40%-90%\n           of their current HP. Melts snow, burns forest, and levels castles/villages.",
+			description = _"<span color='#6ca364'><i><b>Spell:</b></i></span> Spend <span color='#00bbe6'><i>99xp</i></span> and <span color='#c06a61'><i>your attack</i></span> to injure everyone in a 5-hex radius for 80-90% of their\n           current HP. Dries water, melts snow, burns forest, and levels castles/villages.",
 			xp_cost=99, atk_cost=1, 
 		},
 	},
@@ -643,6 +643,7 @@ wesnoth.game_events.on_mouse_action = function(x,y)
 	local selected_unit = wesnoth.units.find_on_map{ x=x, y=y }
 	if (not selected_unit[1] or selected_unit[1].id~='Delfador') then return end
 	if (wml.variables['is_during_attack']) then return end
+	if (wml.variables['is_during_move']  ) then return end
 	if (wml.variables['not_player_turn'] ) then return end
 	
 	if (os.clock()-last_click<0.25) then
