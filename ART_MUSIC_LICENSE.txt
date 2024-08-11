@@ -244,7 +244,14 @@ soldiers
 
 TERRAIN
 ---------------
-made by dalas by modifying pre-existing wesnoth images (GPL v2.0 or later)
+urbanjungle
+symbols
+	made by dalas by modifying pre-existing wesnoth images (GPL v2.0 or later)
+rain
+    from the Era of Magic (inferno8), with modifications by dalas (GPL v2.0 or later)
+snow
+    by Grappe (CC0)
+    https://grappe.itch.io/pixelsnowing
 
 
 UNITS
