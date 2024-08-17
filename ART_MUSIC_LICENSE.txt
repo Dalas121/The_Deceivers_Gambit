@@ -162,6 +162,10 @@ royal-privilege.png
 shield.png
 spit.png
 stasis.png
+banner1.png
+banner2.png
+banner3.png
+banner4.png
 	made by dalas by modifying pre-existing wesnoth images (GPL v2.0 or later)
 
 glamour.png

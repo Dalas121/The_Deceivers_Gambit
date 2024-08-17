@@ -371,6 +371,7 @@ function display_skills_dialog(selecting)
 	-- CREATE DIALOG
 	--###############################
 	local dialog = {
+		definition="menu",
 		T.helptip{ id="tooltip_large" }, -- mandatory field
 		T.tooltip{ id="tooltip_large" }, -- mandatory field
 		T.grid{} }
@@ -379,9 +380,10 @@ function display_skills_dialog(selecting)
 	-------------------------
 	-- HEADER
 	-------------------------
+	table.insert( grid[2], T.row{ T.column{ border="bottom", border_size=15, T.image{  label="icons/banner1.png"  }}} )
 	local spacer = "                                                                  "
 	local                title_text = selecting and _"Select Delfador’s Spells"       or _"Cast Delfador’s Spells"
-	if (apprentice) then title_text = selecting and _"Select The Apprentice’s Spells" or _"Cast The Apprentice’s Spells" end
+	if (apprentice) then title_text = selecting and _"Select the Apprentice’s Spells" or _"Cast the Apprentice’s Spells" end
 	table.insert( grid[2], T.row{ T.column{ T.label{
 		definition="title",
 		horizontal_alignment="center",
@@ -390,7 +392,7 @@ function display_skills_dialog(selecting)
 	local                help_text = _"<span size='2000'> \n</span><span size='small'><i>Delfador knows many useful spells, and will learn more as he levels-up automatically throughout the campaign. Delfador does not use XP to level-up.\nInstead, Delfador uses XP to cast certain spells. If you select spells that cost XP, <b>double-click on Delfador to cast them</b>. You can only cast 1 spell per turn.</i></span>"
 	if (apprentice) then help_text = _"<span size='2000'> \n</span><span size='small'><i>The apprentice knows several useful spells, and will learn more as he levels-up automatically throughout the campaign. The apprentice does not use XP to level-up.\nInstead, he uses XP to cast certain spells. If you select spells that cost XP, <b>double-click on the apprentice to cast them</b>. You can only cast 1 spell per turn.</i></span>" end
 	table.insert( grid[2], T.row{ T.column{T.label{ use_markup=true, label=help_text }}} )
-	table.insert( grid[2], T.row{ T.column{T.label{label="  "}}} )
+	table.insert( grid[2], T.row{ T.column{ border="top", border_size=15, T.image{  label="icons/banner2.png"  }}} )
 	
 	-------------------------
 	-- SKILL GROUPS
@@ -434,9 +436,9 @@ function display_skills_dialog(selecting)
 		
 		-- skill row
 		table.insert( skill_grid[2], T.row{ 
-			T.column{button},
-			T.column{T.label{label="  "}},  T.column{  horizontal_alignment="left", T.image{id="image"..i                }  },
-			T.column{T.label{label="  "}},  T.column{  horizontal_alignment="left", T.label{id="label"..i,use_markup=true}  },
+			T.column{ border="left",  border_size=15, button},
+			T.column{                                 T.label{label="  "}},  T.column{  horizontal_alignment="left", T.image{id="image"..i                }  },
+			T.column{ border="right", border_size=15, T.label{label="  "}},  T.column{  horizontal_alignment="left", T.label{id="label"..i,use_markup=true}  },
 		} )
 		
 		-- subskill row
@@ -459,11 +461,14 @@ function display_skills_dialog(selecting)
 	-------------------------
 	-- CONFIRM BUTTON
 	-------------------------
-	table.insert( grid[2], T.row{ T.column{T.label{label="  "}}} )
-	table.insert( grid[2], T.row{  T.column{  T.button{
-		id="confirm_button", use_markup=true, return_value=1,
-		label=(selecting and _"Confirm Spells <small><i>(can be changed every scenario)</i></small>" or "Cancel"),
-	}}})
+	table.insert( grid[2], T.row{ T.column{T.image{  label="icons/banner2.png"  }}} )
+	table.insert( grid[2], T.row{  T.column{
+		border="bottom", border_size=30, 
+		T.button{
+			id="confirm_button", use_markup=true, return_value=1,
+			label=(selecting and _"Confirm Spells <small><i>(can be changed every scenario)</i></small>" or "Cancel"),
+		}
+	}})
 	
 	
 	
