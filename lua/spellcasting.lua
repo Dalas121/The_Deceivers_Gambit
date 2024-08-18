@@ -463,12 +463,13 @@ function display_skills_dialog(selecting)
 	-------------------------
 	table.insert( grid[2], T.row{ T.column{T.image{  label="icons/banner2.png"  }}} )
 	table.insert( grid[2], T.row{  T.column{
-		border="bottom", border_size=30, 
+		border="top", border_size=10, 
 		T.button{
 			id="confirm_button", use_markup=true, return_value=1,
 			label=(selecting and _"Confirm Spells <small><i>(can be changed every scenario)</i></small>" or "Cancel"),
 		}
 	}})
+	table.insert( grid[2], T.row{ T.column{ border="top", border_size=15,  T.image{  label="icons/banner4.png"  }}} )
 	
 	
 	
