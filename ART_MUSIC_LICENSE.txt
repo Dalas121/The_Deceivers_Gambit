@@ -23,6 +23,7 @@ bell
 door-close
 	by pawsound https://freesound.org/people/pawsound/sounds/154847/ (CC 0)
 
+
 leopard-attack.ogg
 leopard-hit.ogg
 leopard-miss.ogg
@@ -40,6 +41,7 @@ toilet-flush
 wose-create
 	made by dalas by modifying pre-existing wesnoth sounds (GPL v2.0 or later)
 
+gate-fall
 wind
 	from Wesnoth's 'Eastern Invasion' campaign (GPL v2.0 or later)
 
@@ -95,6 +97,7 @@ HALO
 blizzard
 cataclysm
 counterspell
+particle-anims
 stasis
 time-dilation
 	from the Era of Magic (inferno8), with modifications by dalas (GPL v2.0 or later)
@@ -208,6 +211,10 @@ s00-terrain.png
 statue-alduin.png
 thone.png
 	made by dalas by modifying pre-existing wesnoth images (GPL v2.0 or later)
+
+rune_line
+rune_line_glow
+	from Wesnoth's 'Eastern Invasion' campaign (GPL v2.0 or later)
 
 whitefang-flag.png
 	pre-existing wesnoth images from the Descent into Darkness campaign (GPL v2.0 or later)
