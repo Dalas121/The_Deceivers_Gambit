@@ -317,3 +317,7 @@ silverback
 
 delfador
 	base images by Maksiu, with modifications and animations by dalas (CC BY-SA 4.0)
+
+saurian-young
+saurian-devotee
+	by Refumee (GPL v2.0 or later)
