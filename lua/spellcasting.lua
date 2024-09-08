@@ -287,7 +287,7 @@ local skills = {
 			id          = "skill_fireball4",
 			label       = label(_"Fireball"),
 			image       = "attacks/fireball.png",
-			description = _"<span color='#ad6a61'><i><b>Attack:</b></i></span> Ranged 17x4 fire, <i>magical</i>.",
+			description = _"<span color='#ad6a61'><i><b>Attack:</b></i></span> Ranged 18x4 fire, <i>magical</i>.",
 		},
 		-------------------------
 		-- LIGHTNING
