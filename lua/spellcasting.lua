@@ -315,7 +315,7 @@ local skills = {
 			id          = "skill_cataclysm",
 			label       = label(_"Cataclysm"),
 			image       = "icons/cataclysm.png",
-			description = _"<span color='#6ca364'><i><b>Spell:</b></i></span> Spend <span color='#00bbe6'><i>99xp</i></span> and <span color='#c06a61'><i>your attack</i></span> to injure everyone in a 5-hex radius for 80-90% of their\n           current HP. Dries water, melts snow, burns forest, and levels castles/villages.",
+			description = _"<span color='#6ca364'><i><b>Spell:</b></i></span> Spend <span color='#00bbe6'><i>99xp</i></span> and <span color='#c06a61'><i>your attack</i></span> to injure everyone in a 5-hex radius for ~75% of their\n           current HP. Dries water, melts snow, burns forest, and levels castles/villages.",
 			xp_cost=99, atk_cost=1, 
 		},
 	},
