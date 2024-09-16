@@ -105,6 +105,10 @@ time-dilation
 cataclysm:explosion
 	from the God Game Magic Mod add-on (Durzi), with modifications by dalas (GPL v2.0 or later)
 
+ghostcapture-rune
+magical-shield
+	from the Ashen Hearts add-on (Kwandulin/Knyghtmare), with modifications by Dalas (GPL v2.0 or later)
+
 contingency
 fire-halo-small
 panacea
@@ -162,7 +166,6 @@ levitate.png
 mellon.png
 polymorph.png
 royal-privilege.png
-shield.png
 spit.png
 stasis.png
 banner1.png
