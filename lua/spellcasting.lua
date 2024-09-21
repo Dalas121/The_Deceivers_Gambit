@@ -104,7 +104,7 @@ local skills = {
 			id          = "skill_panacea",
 			label       = label(_"Panacea"),
 			image       = "icons/potion_green_small.png",
-			description = _"<span color='#6ca364'><i><b>Spell:</b></i></span> Spend <span color='#00bbe6'><i>8xp</i></span> to fully heal the lowest-health adjacent living ally, and increase its\n           attacks, strikes, and damage by its level. <span color='#bb0000'><b>Next turn, it dies.</b></span>",
+			description = _"<span color='#6ca364'><i><b>Spell:</b></i></span> Spend <span color='#00bbe6'><i>8xp</i></span> to fully heal the lowest-health adjacent living ally, and increase its\n           attacks, strikes, and damage by its level. <span color='#dd0000'><b>Next turn, it dies.</b></span>",
 			xp_cost=8, --XP is also used in spellcasting.cfg
 		},
 		-------------------------
