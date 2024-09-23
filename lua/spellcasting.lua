@@ -640,6 +640,19 @@ end
 function wml_actions.select_delfador_skills(cfg)
 	display_skills_dialog(true)
 end
+function wml_actions.display_skills_dialog(cfg)
+	if (wml.variables['is_during_attack']) then return end
+	if (wml.variables['is_during_move']  ) then return end
+	if (wml.variables['not_player_turn'] ) then return end
+	
+	wesnoth.audio.play("miss-2.ogg")
+	if (wml.variables['no_spellcasting_event']) then
+		wesnoth.game_events.fire(wml.variables['no_spellcasting_event'], cfg.x, cfg.y)
+	else
+		display_skills_dialog()
+	end
+end
+
 
 -------------------------
 -- DETECT DOUBLECLICKS
@@ -648,17 +661,9 @@ local last_click = os.clock()
 wesnoth.game_events.on_mouse_action = function(x,y)
 	local selected_unit = wesnoth.units.find_on_map{ x=x, y=y }
 	if (not selected_unit[1] or selected_unit[1].id~='Delfador') then return end
-	if (wml.variables['is_during_attack']) then return end
-	if (wml.variables['is_during_move']  ) then return end
-	if (wml.variables['not_player_turn'] ) then return end
 	
 	if (os.clock()-last_click<0.25) then
-		wesnoth.audio.play("miss-2.ogg")
-		if (wml.variables['no_spellcasting_event']) then
-			wesnoth.game_events.fire(wml.variables['no_spellcasting_event'], x, y)
-		else
-			display_skills_dialog()
-		end
+		wml_actions.display_skills_dialog{ x=x, y=y }
 		last_click = 0 -- prevent accidentally immediately re-opening the dialog
 	else
 		last_click = os.clock()
