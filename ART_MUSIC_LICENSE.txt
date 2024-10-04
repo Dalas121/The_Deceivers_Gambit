@@ -193,6 +193,9 @@ some made by dalas by modifying pre-existing wesnoth images (GPL v2.0 or later)
 crab.webp
 	made by Dalas (CC0) by modifying a CC0 image: https://www.pexels.com/photo/yellow-crab-on-gray-sand-during-daytime-73769/
 
+henri.png
+	from Mechanical's Asheviere's Dogs addon (GPL v2.0 or later)
+
 shaman.webp
 	by Kordov, made for Wesnoth use and used with permission (GPL v2.0 or later)
 
@@ -275,7 +278,7 @@ eldred
 	base images from the Reign of Lords add-on, with modifications by dalas (GPL v2.0 or later)
 
 asheviere
-	nemaara (CC BY-SA 4.0)
+	Mechanical (CC BY-SA 4.0)
 
 civilian elves
 	base images from Shield/Tzalmavet, with modifications by dalas (GPL v2.0 or later)
