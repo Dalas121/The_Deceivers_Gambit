@@ -128,7 +128,7 @@ local skills = {
 			id          = "skill_chill_touch",
 			label       = label(_"Chill Touch"),
 			image       = "icons/chill-touch.png",
-			description = _"<span color='#ad6a61'><i><b>Attack:</b></i></span> Melee 6x3 cold, <i>slows</i>.",
+			description = _"<span color='#ad6a61'><i><b>Attack:</b></i></span> Melee 6x3 cold, <i>slows</i>. Replaces your default melee attack.",
 		},
 		-------------------------
 		-- LEVITATE
