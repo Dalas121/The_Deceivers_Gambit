@@ -389,9 +389,9 @@ function display_skills_dialog(selecting)
 		horizontal_alignment="center",
 		label = spacer..title_text..spacer,
 	}}} )
-	local                help_text = _"<span size='2000'> \n</span><span size='small'><i>Delfador knows many useful spells, and will learn more as he levels-up automatically throughout the campaign. Delfador does not use XP to level-up. Instead, Delfador uses XP to cast certain spells.\nIf you select spells that cost XP, <b>double-click or right-click on Delfador to cast them</b>. You can only cast 1 spell per turn.</i></span>"
-	if (apprentice) then help_text = _"<span size='2000'> \n</span><span size='small'><i>The apprentice knows several useful spells, and will learn more as he levels-up automatically throughout the campaign. The apprentice does not use XP to level-up.\nInstead, he uses XP to cast certain spells. If you select spells that cost XP, <b>double-click on the apprentice to cast them</b>. You can only cast 1 spell per turn.</i></span>" end
-	table.insert( grid[2], T.row{ T.column{T.label{ use_markup=true, label=help_text }}} )
+	local                help_text = _"<span size='small'><i>Delfador knows many useful spells, and will learn more as he levels-up automatically throughout the campaign. Delfador does not use XP to level-up. Instead,\nDelfador uses XP to cast certain spells. If you select spells that cost XP, <b>double- or right-click on Delfador to cast them</b>. You can only cast 1 spell per turn.</i></span>"
+	if (apprentice) then help_text = _"<span size='small'><i>The apprentice knows several useful spells, and will learn more as he levels-up automatically throughout the campaign. The apprentice does not use XP to level-up. Instead,\nhe uses XP to cast certain spells. If you select spells that cost XP,<b>double- or right-click on the apprentice to cast them</b>. You can only cast 1 spell per turn.</i></span>" end
+	table.insert( grid[2], T.row{ T.column{ border="top", border_size=15, T.label{ use_markup=true, label=help_text }}} )
 	table.insert( grid[2], T.row{ T.column{ border="top", border_size=15, T.image{  label="icons/banner2.png"  }}} )
 	
 	-------------------------
