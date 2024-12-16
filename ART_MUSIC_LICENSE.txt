@@ -193,8 +193,11 @@ some made by dalas by modifying pre-existing wesnoth images (GPL v2.0 or later)
 crab.webp
 	made by Dalas (CC0) by modifying a CC0 image: https://www.pexels.com/photo/yellow-crab-on-gray-sand-during-daytime-73769/
 
+eyestalk
+	preexisting Wesnoth image from: https://units.wesnoth.org/trunk/mainline/is_IS/Eyestalk.html (GPL v2.0 or later)
+
 henri.png
-	from Mechanical's Asheviere's Dogs addon (GPL v2.0 or later)
+	preexisting Wesnoth image from the Liberty campaign (GPL v2.0 or later)
 
 shaman.webp
 	by Kordov, made for Wesnoth use and used with permission (GPL v2.0 or later)
