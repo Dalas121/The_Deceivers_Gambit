@@ -462,13 +462,21 @@ function display_skills_dialog(selecting)
 	-- CONFIRM BUTTON
 	-------------------------
 	table.insert( grid[2], T.row{ T.column{T.image{  label="icons/banner2.png"  }}} )
-	table.insert( grid[2], T.row{  T.column{
-		border="top", border_size=10, 
-		T.button{
-			id="confirm_button", use_markup=true, return_value=1,
-			label=(selecting and _"Confirm Spells <small><i>(can be changed every scenario)</i></small>" or "Cancel"),
-		}
-	}})
+	if (selecting) then
+		table.insert( grid[2], T.row{ T.column{ T.grid{ T.row{ T.column{
+			border="top,right", border_size=10, 
+			T.button{  id="confirm_button", use_markup=true, return_value=1, label=_"Confirm Spells <small><i>(can be changed every scenario)</i></small>"  }
+		}, T.column{
+			border="top,left",  border_size=10, 
+			T.button{  id="wait_button",    use_markup=true, return_value=2, label=_"Choose Later"  }
+		}}}}})
+	else
+		table.insert( grid[2], T.row{ T.column{
+			border="top", border_size=10, 
+			T.button{  id="confirm_button", use_markup=true, return_value=1, label="Cancel"  }
+		}})
+	end
+	
 	table.insert( grid[2], T.row{ T.column{ border="top", border_size=15,  T.image{  label="icons/banner4.png"  }}} )
 	
 	
@@ -588,16 +596,19 @@ function display_skills_dialog(selecting)
 	-- select spell, synced
 	if (selecting) then
 		dialog_result = wesnoth.sync.evaluate_single(function()
-			gui.show_dialog( dialog, preshow )
+			retval = gui.show_dialog( dialog, preshow )
+			result_table.wait_to_select_spells = retval==2 and 'yes' or 'no' --not nil, or else the key appears blank
 			return result_table;
 		end)
-		for skill_id,skill_value in pairs(dialog_result) do wml.variables[skill_id]=skill_value end
+		for skill_id,skill_value in pairs(dialog_result) do wml.variables[skill_id] = result_table.wait_to_select_spells=='yes' and 'no' or skill_value end
+		wml.variables['wait_to_select_spells'] = result_table.wait_to_select_spells; --set wait_to_select_spells manually, since it often gets overwritten to 'no' above
+		wesnoth.game_events.fire('refresh_delfador_skills')
 	
 	-- cast spells, synced
 	else
 		dialog_result = wesnoth.sync.evaluate_single(function()
 			gui.show_dialog( dialog, preshow )
-			if (wml.variables['skill_id']) then wesnoth.game_events.fire('cast_skill_synced', delfador.x, delfador.y) end
+			if (wml.variables['skill_id']) then wesnoth.game_events.fire('cast_skill_synced', delfador.x, delfador.y) end --used by spellcasting.cfg
 			wml.variables['skill_id'] = nil
 		end)
 	end
@@ -662,8 +673,12 @@ wesnoth.game_events.on_mouse_action = function(x,y)
 	if (not selected_unit[1] or selected_unit[1].id~='Delfador') then return end
 	
 	if (os.clock()-last_click<0.25) then
-		wml_actions.display_skills_dialog{ x=x, y=y }
-		last_click = 0 -- prevent accidentally immediately re-opening the dialog
+		if (wml.variables['wait_to_select_spells']) then
+			wml_actions.select_delfador_skills()
+		else
+			wml_actions.display_skills_dialog{ x=x, y=y }
+		end
+		last_click = 0 --prevent accidentally immediately re-opening the dialog
 	else
 		last_click = os.clock()
 	end
